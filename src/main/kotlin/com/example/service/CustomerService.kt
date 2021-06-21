@@ -2,7 +2,9 @@ package com.example.service
 
 import com.example.dao.CustomerDao
 import com.example.entiry.Customer
+import com.example.entiry.Customer_
 import org.seasar.doma.jdbc.Config
+import org.seasar.doma.jdbc.criteria.KEntityql
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 
@@ -16,11 +18,11 @@ class CustomerService(private val config: Config, private val customerDao: Custo
 
     fun findAll(): List<Customer> {
         // `Kotlin specific Criteria API` を使った検索処理
-//        val entityql = KEntityql(config)
-//        val e = Customer_()
-//        return entityql.from(e).orderBy { asc(e.id) }.fetch()
+        val entityql = KEntityql(config)
+        val e = Customer_()
+        return entityql.from(e).orderBy { asc(e.id) }.fetch()
 
-        return customerDao.selectAll()
+//        return customerDao.selectAll()
 
     }
 
