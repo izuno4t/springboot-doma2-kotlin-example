@@ -12,14 +12,24 @@ interface CustomerDao {
     data class Condition(val id: Long? = null, val firstName: String? = null, val lastName: String? = null)
 
     // `@org.seasar.doma.Sql` アノテーションでのテンプレート記述を使った検索処理
-    @Sql("""
+    @Sql(
+        """
     SELECT * FROM customer WHERE id = /* id */1
-    """)
+    """
+    )
     @Select
     fun selectById(id: Long): Customer?
 
     @Select
     fun selectByCondition(condition: Condition): List<Customer>
+
+    @Sql(
+        """
+    SELECT * FROM customer
+    """
+    )
+    @Select
+    fun selectAll(): List<Customer>
 
     @Insert
     fun insert(customer: Customer): Int
@@ -29,5 +39,6 @@ interface CustomerDao {
 
     @Delete
     fun delete(customer: Customer): Int
+
 
 }

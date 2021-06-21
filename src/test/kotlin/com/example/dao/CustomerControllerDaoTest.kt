@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional
 
 @SpringBootTest
 @Transactional
-class CustomerDaoTest @Autowired constructor(private val dao: CustomerDao, private val jdbcTemplate: JdbcTemplate) {
+class CustomerControllerDaoTest @Autowired constructor(private val dao: CustomerDao, private val jdbcTemplate: JdbcTemplate) {
 
     @BeforeEach
     fun setup() {
