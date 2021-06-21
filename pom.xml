@@ -10,7 +10,7 @@
     </parent>
 
     <groupId>com.example</groupId>
-    <artifactId>maven-kotlin</artifactId>
+    <artifactId>springboot-doma2-kotlin</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>maven-kotlin</name>
     <description>Demo project for Spring Boot</description>
