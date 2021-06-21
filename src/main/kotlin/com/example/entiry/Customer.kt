@@ -4,12 +4,11 @@ import org.seasar.doma.*
 
 
 @Entity(listener = CustomerListener::class, metamodel = Metamodel())
-@Table(name = "foo")
+@Table(name = "customer")
 class Customer {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(sequence = "customers_id_seq")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long = -1
 
     @Column(name = "first_name")

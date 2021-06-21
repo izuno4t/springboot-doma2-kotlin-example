@@ -13,7 +13,7 @@ interface CustomerDao {
 
     // `@org.seasar.doma.Sql` アノテーションでのテンプレート記述を使った検索処理
     @Sql("""
-    SELECT * FROM foo WHERE id = /* id */1
+    SELECT * FROM customer WHERE id = /* id */1
     """)
     @Select
     fun selectById(id: Long): Customer?

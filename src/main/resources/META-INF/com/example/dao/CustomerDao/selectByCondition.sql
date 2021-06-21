@@ -1,5 +1,5 @@
 SELECT *
-FROM customers
+FROM customer
 WHERE 1 = 1
 /*%if condition.id != null */
     id = /* condition.id */1
