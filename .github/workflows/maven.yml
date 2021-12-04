@@ -20,7 +20,7 @@ jobs:
       postgres:
         image: postgres:14
         ports:
-          - 5432/tcp
+          - 5432:5432
         env:
           POSTGRES_DB: example
           POSTGRES_USER: example
@@ -37,7 +37,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: exec create_tables.sql
       run: |
-        cat ./schema/ddl/create_table.sql | PGPASSWORD=example psql -f -hlocalhost -p5432 -Uexample example
+        cat ./schema/ddl/create_table.sql | PGPASSWORD=example psql -f -hpostgres -p5432 -Uexample example
     - name: Set up JDK 17
       uses: actions/setup-java@v2
       with:
