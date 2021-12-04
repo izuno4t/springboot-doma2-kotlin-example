@@ -4,7 +4,7 @@ import com.example.dao.CustomerDao
 import com.example.entiry.Customer
 import com.example.entiry.Customer_
 import org.seasar.doma.jdbc.Config
-import org.seasar.doma.jdbc.criteria.KEntityql
+import org.seasar.doma.kotlin.jdbc.criteria.KEntityql
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 

@@ -1,0 +1,19 @@
+CREATE ROLE example WITH
+    LOGIN
+    SUPERUSER
+    CREATEDB
+    CREATEROLE
+    INHERIT
+    NOREPLICATION
+    CONNECTION LIMIT -1
+    PASSWORD 'example';
+
+DROP DATABASE IF EXISTS example;
+CREATE DATABASE example
+    WITH
+    OWNER = example
+    TEMPLATE = template0
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'C'
+    LC_CTYPE = 'C'
+    CONNECTION LIMIT = -1;

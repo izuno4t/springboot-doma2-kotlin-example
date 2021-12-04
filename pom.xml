@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.5.1</version>
+        <version>2.6.1</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
@@ -16,7 +16,9 @@
     <description>Demo project for Spring Boot</description>
 
     <properties>
-        <doma.version>2.47.0</doma.version>
+        <java.version>17</java.version>
+        <kotlin.version>1.6.0</kotlin.version>
+        <doma.version>2.50.0</doma.version>
     </properties>
 
     <dependencies>
@@ -35,7 +37,7 @@
         <dependency>
             <groupId>org.seasar.doma.boot</groupId>
             <artifactId>doma-spring-boot-starter</artifactId>
-            <version>1.5.0</version>
+            <version>1.6.0</version>
         </dependency>
         <dependency>
             <groupId>org.seasar.doma</groupId>
@@ -73,7 +75,7 @@
             </plugin>
             <plugin>
                 <artifactId>maven-resources-plugin</artifactId>
-                <version>3.1.0</version>
+                <version>3.2.0</version>
                 <configuration>
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
