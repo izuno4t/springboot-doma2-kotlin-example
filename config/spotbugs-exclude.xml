@@ -1,0 +1,19 @@
+<FindBugsFilter>
+	<Match>
+		<Class name=".*"/>
+	</Match>
+	<!-- Ignore all NM_SAME_SIMPLE_NAME_AS_SUPERCLASS or NM_SAME_SIMPLE_NAME_AS_INTERFACE violations -->
+	<Match>
+		<Bug pattern="NM_SAME_SIMPLE_NAME_AS_SUPERCLASS"/>
+	</Match>
+	<Match>
+		<Bug pattern="NM_SAME_SIMPLE_NAME_AS_INTERFACE"/>
+	</Match>
+	<Match>
+		<BugPattern name="UUF_UNUSED_PUBLIC_OR_PROTECTED_FIELD"/>
+		<BugPattern name="URF_UNREAD_PUBLIC_OR_PROTECTED_FIELD"/>
+	</Match>
+	<Match>
+		<BugCode name="EI,EI2"/>
+	</Match>
+</FindBugsFilter>
