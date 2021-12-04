@@ -37,7 +37,10 @@ jobs:
     - uses: actions/checkout@v2
     - name: exec create_tables.sql
       run: |
-        PGPASSWORD=example psql -f schema/ddl/create_tables.sql -h127.0.0.1 -Uexample example
+        ls -lR
+    - name: exec create_tables.sql
+      run: |
+        PGPASSWORD=example psql -f ./schema/ddl/create_tables.sql -h127.0.0.1 -Uexample example
     - name: Set up JDK 17
       uses: actions/setup-java@v2
       with:
