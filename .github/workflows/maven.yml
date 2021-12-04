@@ -40,7 +40,7 @@ jobs:
         cat ./schema/ddl/create_table.sql
     - name: exec create_tables.sql
       run: |
-        PGPASSWORD=example psql -f -h localhost -p5432 -Uexample example
+        PGPASSWORD=example psql -f -h localhost -p5432 -U example -d example
     - name: Set up JDK 17
       uses: actions/setup-java@v2
       with:
