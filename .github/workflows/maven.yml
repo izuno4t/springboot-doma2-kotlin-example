@@ -14,13 +14,35 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    # `container-job` で実行するサービスコンテナ
+    services:
+      # サービスコンテナへのアクセスに使用されるラベル
+      postgres:
+        # Docker Hub のイメージ
+        image: postgres
+        # postgres のパスワードを入力する
+        env:
+          POSTGRES_DB=example
+          POSTGRES_USER=example
+          POSTGRES_PASSWORD: example
+          POSTGRES_INITDB_ARGS=--encoding=UTF-8 --lc-collate=C --lc-ctype=C
+        # postgres が起動するまで待機するようにヘルスチェックを設定する
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
     steps:
+    - name: exec hoge.sql
+      run: |
+        PGPASSWORD=example psql -f schema/ddl/create_tables.sql -hlocalhost -Uexample example
     - uses: actions/checkout@v2
     - name: Set up JDK 17
       uses: actions/setup-java@v2
       with:
         java-version: '17'
-        distribution: 'adopt'
+        distribution: 'liberica'
         cache: maven
     - name: Build with Maven
       run: ./mvnw -B clean test

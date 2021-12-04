@@ -16,6 +16,10 @@ The Example of SpringBoot Application.
 mvn -N io.takari:maven:0.7.7:wrapper
 ```
 
+## GitHub Actions
+
+- [setup-java](https://github.com/actions/setup-java)
+
 ## Resources
 
 - [Kotlin](https://kotlinlang.org/)
